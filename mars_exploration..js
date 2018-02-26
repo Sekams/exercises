@@ -1,24 +1,13 @@
 const marsExploration = (s) => {
-    let msgLength = s.length;
-    if (msgLength >= 1 && msgLength <= 99) {
-        if ((msgLength % 3) === 0) {
-            if (/^[A-Z]+$/.test(s)) {
-                let alerationCount = 0;
-                for (idx = 0; idx < s.length; idx++) {
-                    let char = s.charAt(idx);
-                    if (char !== 'S' && char !== 'O') {
-                        alerationCount = alerationCount + 1;
-                    }
-                }
-                console.log(alerationCount);
-            } else {
-                console.log("Invalid Input.")
+    if (s.length >= 1 && s.length <= 99 && s.length % 3 === 0 && /^[A-Z]+$/.test(s)) {
+        let alerationCount = 0;
+        for (idx = 0; idx < s.length; idx++) {
+            let char = s.charAt(idx);
+            if (char !== 'S' && char !== 'O') {
+                alerationCount = alerationCount + 1;
             }
-        } else {
-            console.log("Invalid Length.")
         }
-    } else {
-        console.log("Input Too Long.")
+        console.log(alerationCount);
     }
 }
 
